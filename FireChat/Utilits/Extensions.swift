@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
@@ -105,4 +106,52 @@ extension UIView {
         widthAnchor.constraint(equalToConstant: width).isActive = true
     }
 }
+
+extension UIButton {
+    func attributedtitle(firstPart: String, secondPart: String) {
+        
+        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 13)]
+        let attriburedtitle = NSMutableAttributedString(string: "\(firstPart) ", attributes: atts)
+        
+        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.boldSystemFont(ofSize: 13)]
+        
+        attriburedtitle.append(NSAttributedString(string: secondPart, attributes: boldAtts))
+        
+        setAttributedTitle(attriburedtitle, for: .normal)
+    }
+}
+
+extension UIViewController {
+    
+    static let hud = JGProgressHUD(style: .dark)
+    
+    func configureGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
+        gradient.locations = [0, 1]
+        gradient.frame = view.frame
+        view.layer.addSublayer(gradient)
+    }
+    
+    func showMessage(withTitle title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showLoader(_ show: Bool, withText text: String? = "Loading") {
+        
+        view.endEditing(true)
+        UIViewController.hud.textLabel.text = text
+
+        if show == true {
+            UIViewController.hud.show(in: view)
+        } else if show == false {
+            UIViewController.hud.dismiss()
+        }
+    }
+}
+
+
+
 
