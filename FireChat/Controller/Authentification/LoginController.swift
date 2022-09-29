@@ -103,7 +103,6 @@ class LoginController: UIViewController {
     
     func configureUI() {
         
-        configureGradientLayer()
         chackFormStatus()
         
         navigationController?.navigationBar.isHidden = true
