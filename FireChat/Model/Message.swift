@@ -17,6 +17,10 @@ struct Message {
     
     let isFromCurrentUser: Bool
     
+    var chatPartnerId: String {
+        return isFromCurrentUser ? toId : fromId
+    }
+    
     init(dictionaty: [String: Any]) {
         self.text = dictionaty["text"] as? String ?? ""
         self.toId = dictionaty["toId"] as? String ?? ""
@@ -25,6 +29,7 @@ struct Message {
         
         self.isFromCurrentUser = fromId == Auth.auth().currentUser?.uid
     }
+
 }
 
 struct Conversation {
