@@ -201,16 +201,11 @@
 		849EC82128D1EE9900F5004C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				849EC82C28D384CE00F5004C /* InputContainerView.swift */,
+				84B8DFD328E7661900F3A1D8 /* Authentication */,
 				849EC82E28D38C3F00F5004C /* CustomTextField.swift */,
 				84892A7928D4AC8700F29F87 /* CustomButton.swift */,
-				840BE1DC28E364A8005CF822 /* UserCell.swift */,
-				840BE1E428E49E9C005CF822 /* CustomInputAccessoryView.swift */,
-				840BE1E628E4B346005CF822 /* MessageCell.swift */,
-				840BE1EC28E61638005CF822 /* ConversationCell.swift */,
-				840BE1F228E62B34005CF822 /* ProfileHeader.swift */,
-				840BE1F628E64DDE005CF822 /* ProfileCell.swift */,
-				840BE1F828E653A2005CF822 /* ProfileFooter.swift */,
+				84B8DFD228E765C400F3A1D8 /* Conversation */,
+				84B8DFD028E7659A00F3A1D8 /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +226,35 @@
 				849EC82828D346DD00F5004C /* RegistrationController.swift */,
 			);
 			path = Authentification;
+			sourceTree = "<group>";
+		};
+		84B8DFD028E7659A00F3A1D8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				840BE1F228E62B34005CF822 /* ProfileHeader.swift */,
+				840BE1F628E64DDE005CF822 /* ProfileCell.swift */,
+				840BE1F828E653A2005CF822 /* ProfileFooter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84B8DFD228E765C400F3A1D8 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				840BE1E428E49E9C005CF822 /* CustomInputAccessoryView.swift */,
+				840BE1DC28E364A8005CF822 /* UserCell.swift */,
+				840BE1E628E4B346005CF822 /* MessageCell.swift */,
+				840BE1EC28E61638005CF822 /* ConversationCell.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		84B8DFD328E7661900F3A1D8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				849EC82C28D384CE00F5004C /* InputContainerView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		F80F42FCD628E296C7631569 /* Pods */ = {
